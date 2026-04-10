@@ -49,8 +49,15 @@ public class SudokuGenerator {
                 System.out.println("The current position is not a number you can modify. Please try agian!");
                 continue;
             }
-            System.out.println("Please enter the number you want to replace this position with: ");
-            int guess = sc.nextInt();
+            boolean vaild = true;
+            int guess = 0;
+            while(vaild){
+                System.out.println("Please enter a vaild number you want to replace this position with: ");
+                guess = sc.nextInt();
+                if (guess > 0 && guess < 10){
+                    vaild = false;
+                }
+            }
 
 
             playerBoard[row][col] = guess;

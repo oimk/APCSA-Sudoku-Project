@@ -11,15 +11,12 @@ public class SudokuGenerator {
     private static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args){
-        fillDiagonal(0, 0);
-        fillDiagonal(3, 3);
-        fillDiagonal(6,6);
-        fillGrid(0,3);
+        generateBoard();
         removeElements();
         printBoard(playerBoard);
         System.out.println("Solution: ");
         printBoard(board);
-        
+
         boolean play = true;
         System.out.println();
         System.out.println("The board above is an unsolved Sudoku Puzzle. Your goal is to fill in the 0 in the board with a number from 1-9 that satisfies Sudoku's Rules.");
@@ -73,6 +70,13 @@ public class SudokuGenerator {
         System.out.println("Solution: ");
         printBoard(board);
 
+    }
+
+    public static void generateBoard(){ //init board
+        fillDiagonal(0, 0);
+        fillDiagonal(3, 3);
+        fillDiagonal(6,6);
+        fillGrid(0,3);
     }
 
     public static boolean isArrayEqual(){
